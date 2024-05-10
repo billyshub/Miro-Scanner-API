@@ -117,8 +117,10 @@ def main():
     root = tk.Tk()
 
     # Obtain the miro board url
+    config = configparser.ConfigParser()
+    config.read('config.ini')
     global miro_input
-    miro_input = 'https://miro.com/app/board/uXjVNUiYfUw=/'
+    miro_input = config['Tokens']['miro_url']
 
     # Close the main application window
     root.destroy()
